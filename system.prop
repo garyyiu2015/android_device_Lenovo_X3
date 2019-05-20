@@ -237,5 +237,8 @@ persist.radio.hw_mbn_update=1
 persist.radio.ruimenabled=true
 persist.sys.ruimenabled=true
 
+# Storage
+ro.sys.sdcardfs=true
+
 # Timezone
 persist.sys.timezone=Asia/Shanghai
