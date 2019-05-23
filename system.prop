@@ -221,6 +221,9 @@ ro.audio.rxanc=true
 ro.audio.rxanc_default_on=false
 persist.audio.rxanc_enabled=false
 
+# Camera
+persist.camera.HAL3.enabled=1
+
 # GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
