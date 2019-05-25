@@ -140,6 +140,9 @@ BOARD_USES_QCNE := true
 ENABLE_CPUSETS := true
 ENABLE_SCHED_BOOST := true
 
+# Double tap to wake
+TARGET_TAP_TO_WAKE_NODE := "/sys/class/input/input0/wake_gesture"
+
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
