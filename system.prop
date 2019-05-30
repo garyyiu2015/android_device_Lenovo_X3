@@ -16,7 +16,7 @@ persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 # Start in global mode
-ro.telephony.default_network=10
+ro.telephony.default_network=20
 
 debug.sf.hw=1
 debug.egl.hw=1
@@ -31,12 +31,17 @@ dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 
-ro.sf.lcd_density=560
+ro.sf.lcd_density=480
 ro.hdmi.enable=true
 persist.speaker.prot.enable=false
 #0 is default(30 min)
 persist.spkr.cal.duration=0
 qcom.hw.aac.encoder=true
+
+#
+# system props for the dpm module
+#
+persist.dpm.feature=3
 
 #
 # system props for the cne module
@@ -191,8 +196,8 @@ ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=1024
 
-# enable navigation bar
-qemu.hw.mainkeys=0
+# disable navigation bar
+qemu.hw.mainkeys=1
 
 #enable voice path for PCM VoIP by default
 use.voice.path.for.pcm.voip=true
@@ -202,3 +207,35 @@ persist.debug.coresight.config=stm-events
 
 # Create zram disk
 ro.config.zram=true
+
+#Begin,Lenovo-sw zhangkun9 add 2015-12-01, add new feature
+#enable qcril log to adb and qxdm
+persist.radio.adb_log_on=0
+#End,Lenovo-sw zhangkun9 add 2015-12-01, add new feature
+
+#case 02351832
+persist.radio.ims.cmcc=true
+
+# Audio
+ro.audio.rxanc=true
+ro.audio.rxanc_default_on=false
+persist.audio.rxanc_enabled=false
+
+# GPS
+persist.gps.qc_nlp_in_use=1
+persist.loc.nlp_name=com.qualcomm.location
+ro.gps.agps_provider=1
+
+# RIL
+persist.radio.sap_silent_pin=1
+persist.radio.primarycard=true
+ro.telephony.default_cdma_sub=0
+persist.radio.rat_on=combine
+persist.data.dont_use_epc=true
+persist.radio.sw_mbn_update=1
+persist.radio.hw_mbn_update=1
+persist.radio.ruimenabled=true
+persist.sys.ruimenabled=true
+
+# Timezone
+persist.sys.timezone=Asia/Shanghai

@@ -25,6 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+import init.lenovo.rc
 import init.qcom.usb.rc
 import init.target.rc
 
@@ -34,6 +35,9 @@ on early-init
     insmod /sbin/qdrbg_module.ko
 
 on init
+    #[lenovo-fw,wangxz5,add_bootprof_log],"add for bootprof",add
+    write /proc/bootprof "INIT: on init start"
+    #[lenovo-fw,wangxz5,add_bootprof_log],end
     start qfintverify
     # Set permissions for persist partition
     mkdir /persist 0771 system system
@@ -51,6 +55,9 @@ on early-boot
     write /sys/module/pil_msa/parameters/modem_auth_timeout_ms ${persist.sys.modem_auth_timeout}
     write /sys/module/peripheral_loader/parameters/proxy_timeout_ms ${persist.sys.pil_proxy_timeout}
     write /sys/kernel/boot_adsp/boot 1
+    #[lenovo-fw,wangxz5,add_bootprof_log],"add bootprof for qc",add
+    write /proc/bootprof "Init: early_boot start"
+    #[lenovo-fw,wangxz5,add_bootprof_log],end
     exec u:r:qti_init_shell:s0 -- /init.qcom.early_boot.sh
 
 on boot
@@ -180,6 +187,10 @@ on boot
 
 # msm specific files that need to be created on /data
 on post-fs-data
+
+    # Fingerint
+    mkdir /data/fpc 0770 system system
+
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
 

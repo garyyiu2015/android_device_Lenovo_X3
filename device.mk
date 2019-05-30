@@ -205,6 +205,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.class_main.sh \
+    init.lenovo.rc \
     init.mdm.sh \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
