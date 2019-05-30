@@ -311,6 +311,12 @@ on post-fs-data
     mkdir /data/misc/qti-logkit/socket-public/ 2750 system qcom_diag
     mkdir /data/misc/qti-logkit/logdata/ 2750 system shell
 
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
+    group drmrpc input system
+    socket fpce stream 0660 system system
+
 service qfintverify /sbin/qfintverify
     user root
     class core
