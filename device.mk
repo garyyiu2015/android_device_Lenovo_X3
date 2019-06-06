@@ -159,6 +159,11 @@ PRODUCT_PACKAGES += \
     sap.conf \
     xtwifi.conf
 
+# IPA
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
