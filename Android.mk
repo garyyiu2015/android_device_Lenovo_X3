@@ -79,6 +79,16 @@ $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 
 #########################################################################
+# Create Audio Symlink
+#########################################################################
+
+$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wcd9320)
+
+$(shell ln -s /data/misc/audio/mbhc.bin $(TARGET_OUT_ETC)/firmware/wcd9320/wcd9320_mbhc.bin)
+$(shell ln -s /data/misc/audio/wcd9320_anc.bin $(TARGET_OUT_ETC)/firmware/wcd9320/wcd9320_anc.bin)
+$(shell ln -s /data/misc/audio/wcd9320_mad_audio.bin $(TARGET_OUT_ETC)/firmware/wcd9320/wcd9320_mad_audio.bin)
+
+#########################################################################
 # Create Folder Structure
 #########################################################################
 
